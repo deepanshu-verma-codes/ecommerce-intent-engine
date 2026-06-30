@@ -9,8 +9,8 @@ const app = express();
 // Security Middlewares
 app.use(helmet());
 app.use(cors({
-  origin: 'http://localhost:5173',
-  methods: ['POST', 'OPTIONS'],
+  origin: ['http://localhost:5173', 'https://ecommerce-intent-engine-1uj9szyhw.vercel.app', process.env.FRONTEND_URL],
+  methods: ['POST', 'OPTIONS', 'GET'],
   allowedHeaders: ['Content-Type']
 }));
 app.use(express.json({ limit: '10kb' }));
